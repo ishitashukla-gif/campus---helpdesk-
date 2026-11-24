@@ -3,58 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Campus Helpdesk</title>
+<title>Campus Helpdesk - DDU Gorakhpur</title>
 <style>
 body{font-family:Arial;background:#f0f4ff;margin:0;padding:0}
-header{background:#4f46e5;color:white;padding:25px;text-align:center}
-header h1{margin:0}
+header{background:#0a4a6e;color:white;padding:30px;text-align:center}
+header h1{margin:0;font-size:28px}
+header p{margin:5px 0 0;opacity:0.9}
 .container{max-width:800px;margin:20px auto;padding:20px}
 .card{background:white;padding:20px;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,0.1);margin-bottom:20px}
 input,textarea,select{width:100%;padding:10px;margin:8px 0;border:1px solid #ccc;border-radius:8px}
-button{background:#4f46e5;color:white;border:none;padding:12px 20px;border-radius:8px;cursor:pointer;width:100%;font-size:16px}
-button:hover{background:#3730a3}
+button{background:#0a4a6e;color:white;border:none;padding:12px 20px;border-radius:8px;cursor:pointer;width:100%;font-size:16px}
+button:hover{background:#083a57}
 .ticket{background:#eef2ff;padding:12px;border-radius:8px;margin-top:10px}
 </style>
 </head>
 <body>
 <header>
-<h1>🎓 Campus Helpdesk</h1>
-<p>Apni problem batao, hum solve karenge!</p>
+<h1>Deen Dayal Upadhyaya Gorakhpur University</h1>
+<p>Campus Helpdesk - Student Support Portal</p>
+<p>Gorakhpur, Uttar Pradesh</p>
 </header>
 <div class="container">
 <div class="card">
-<h2>Raise a Ticket</h2>
-<input id="name" placeholder="Your Name">
-<select id="category">
-<option>Hostel Issue</option>
-<option>Fees / Admin</option>
-<option>WiFi / IT Issue</option>
-<option>Library</option>
-<option>Other</option>
-</select>
-<textarea id="issue" placeholder="Apni problem likho..."></textarea>
-<button onclick="submitTicket()">Submit Ticket</button>
+<h2>Raise a Ticket 🎫</h2>
+<input type="text" placeholder="Your Name">
+<input type="text" placeholder="Roll Number / Course">
+<select><option>Select Department</option><option>Exam Cell</option><option>Admission</option><option>Hostel</option><option>Fees / Scholarship</option><option>Other</option></select>
+<textarea placeholder="Describe your problem..."></textarea>
+<button>Submit Ticket</button>
 </div>
 <div class="card">
-<h2>Your Tickets</h2>
-<div id="list"><p>No tickets yet.</p></div>
+<h2>Recent Tickets</h2>
+<div class="ticket"><b>Rahul - B.A 2nd Year</b><br>Exam form not opening</div>
+<div class="ticket"><b>Priya - B.Sc</b><br>Scholarship status pending</div>
 </div>
 </div>
-<script>
-function submitTicket(){
-let n=document.getElementById('name').value;
-let c=document.getElementById('category').value;
-let i=document.getElementById('issue').value;
-if(!n||!i){alert('Please fill all fields');return;}
-let div=document.createElement('div');
-div.className='ticket';
-div.innerHTML='<b>'+n+'</b> - '+c+'<br>'+i+'<br><small>Status: Pending ⏳</small>';
-let list=document.getElementById('list');
-if(list.innerHTML.includes('No tickets')) list.innerHTML='';
-list.appendChild(div);
-document.getElementById('issue').value='';
-alert('Ticket Submitted!');
-}
-</script>
 </body>
 </html>
